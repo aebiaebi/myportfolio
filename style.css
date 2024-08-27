@@ -1,0 +1,332 @@
+body{
+    font-family: sans-serif;
+    background-color: rgb(22, 22, 26);
+    margin: 0;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+div.nav nav{
+    margin: 0;
+    background-color: rgb(25, 28, 30);
+    background-size: cover;
+    width: 100%;
+    height: 55px;
+    display: flex;
+
+}
+nav{
+    margin: auto;
+    position: relative;
+    height: 1%;
+    padding-bottom: 0px;
+    justify-content: center;
+    position: fixed;
+    margin: auto;
+    z-index: 100;
+}
+nav a{
+    padding: 15px 40px;
+    position: relative;
+    letter-spacing: 2px;
+}
+nav a:hover{
+    color: pink;
+}
+nav a::after{
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: pink;
+    position: absolute;
+    left: 0px;
+    top: 48px;
+    justify-content: center;
+    border-radius: 80px;
+    opacity: 0;
+}
+nav a:hover::after{
+    opacity: 1;
+    cursor: pointer;
+}
+
+section{
+    position: absolute;
+    width: 40%;
+    padding-left:18%;
+    padding-top: 180px;
+    color: white;
+}
+
+h1{
+    padding-top: 3%;
+    font-size: 45px; 
+}
+h1 span{
+    color: pink;
+}
+.nav-btn{
+    font-size: 20px;
+    color: white;
+    letter-spacing: 2px;
+    width: 150px;
+    height: 50px;
+    position: relative;
+    background-color: transparent;
+    border-color: pink;
+    border-width: 3px;
+    border-radius: 15px;
+    border-style: solid;
+}
+.nav-btn::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: pink;
+    border-radius: 10px;
+    left: 0;
+    top: 0px;
+    opacity: 0;
+}
+.nav-btn:hover::after{
+    opacity: 1;
+    transition: 0.5s;
+    cursor: pointer;
+}
+div.pfp{
+    position: relative;
+    align-items: center;
+    right: -850px;
+    top: 70px;
+}
+div.about-content{
+    width: 40%;
+    height: 50%;
+    color: pink;
+    left: 250px;
+    position: relative;
+    top: -250px;
+    padding-bottom: 0;
+    letter-spacing: 0.5px;
+}
+h2{
+    margin: auto;
+    font-size: 40px;
+}
+p{
+    color: white;
+}
+h3{
+    padding-top: 30%;
+    margin: auto;
+    font-size: 40px;
+    padding-bottom: 0;
+}
+h4{
+    padding-top: 8%;
+    font-size: 30px;
+}
+.icons{
+    width: 50px;
+    height: 50px;
+    top: 10px;
+}
+h5{
+    margin: auto;
+    font-size: 30px;
+    padding-top: 10%;
+}
+h6{
+    margin: auto;
+    font-size: 30px;
+    padding-top: 10%;
+}
+.works{
+    margin: auto;
+    top: 30px;
+    left: -50px;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    letter-spacing: 1.5px;
+    
+}
+.container h4{
+    font-size: 35px;
+    color: pink;
+}
+.icons{
+    width: 100%;
+    top: -10%;
+    position: absolute;
+    top: 290%;
+    left: 12.5%;
+}
+.heading h1{  
+    font-size: 40px;
+    color: pink;
+    position: relative;
+    padding-top: 0;
+    padding-left: 16%;
+}
+.icons img{
+    margin: auto;
+    width: 30%;
+    height: 280%;
+}
+.photo{
+    width: 80%;
+    padding-left: 0%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+
+}
+.pic{
+    position: relative;
+    height: 340px;
+    cursor: pointer;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0px 30px rgb(14, 14, 14);
+    object-fit: cover;
+    transition: 1s;
+}
+.pic::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 15px;
+    height: 0;
+    background-color: rgb(0, 0, 0,.4);
+    transition: 0.3s;
+}
+.pic:hover::before{
+    height: 100%;
+}
+
+/* popup */
+
+.popup{
+    position: fixed;
+    top: 15px;
+    left: 7%;
+    transform: translate(50px, 50px) scale(0);
+    width: 80%;
+    max-width: 1200px;
+    height: 90vh;
+    max-height: 600px;
+    border-radius: 15px;
+    background: rgb(0, 0, 0,.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    overflow: hidden;
+    transition: 1s;
+    opacity: 0;
+}
+.popup.active{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.popup.active .close-btn,
+.popup.active .image-name,
+.popup.active .index,
+.popup.active .large-image,
+.popup.active .arrow-btn{
+    opacity: 1;
+    transition: opacity .5s;
+    transition-delay: 1s;
+}
+
+.top-bar{
+    opacity: 0;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 99.5%;
+    height: 40px;
+    background: pink;
+    color: #fff;
+    text-align: center;
+    line-height: 0px;
+    border-radius: 15px;
+    font-weight: 300;
+}
+.inage-name{
+    opacity: 0;
+}
+.close-btn{
+    opacity: 0;
+    position: absolute;
+    top: 20%;
+    right: 8px;
+    width: 10px; 
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+.arrow-btn{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    padding: 50px;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+button.left-arrow{
+    left: 25px;
+    top: 250px;
+}
+button.right-arrow{
+    right: -33%;
+    top: 250px;
+}
+button.left-arrow img{
+    width: 16%;
+    height: 20%;
+}
+button.right-arrow img{
+    width: 16%;
+    height: 20%;
+}
+.right-arrow:hover{
+    background-color: rgb(0, 0, 0,.4);
+    border-radius: 5px;
+}
+.left-arrow:hover{
+    background-color: rgb(0, 0, 0,.4);
+    border-radius: 5px;
+}
+.index{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 80px;
+    font-weight: 100;
+    color: pink;
+    opacity: 0;
+}
+.large-image{
+    margin-top: 4%;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    opacity: 0;
+}
